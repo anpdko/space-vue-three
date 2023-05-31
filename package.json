@@ -9,7 +9,9 @@
   },
   "dependencies": {
     "@vue/compiler-sfc": "^3.3.4",
+    "@vueuse/core": "^10.1.2",
     "core-js": "^3.8.3",
+    "three": "^0.152.2",
     "vue": "^3.3.4",
     "vue-router": "^4.0.3"
   },

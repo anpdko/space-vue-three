@@ -1,29 +1,30 @@
 <template>
    <nav class="navbar">
       <img class="logo" src="@/assets/shared/logo.svg" alt="">
-      <div class="box_line">
-         <span class="line"></span>
-      </div>
-      <ul class="nav_list">
-         <li class="active">
+      <span class="line"></span>
+      <ul class="menu">
+         <li :class="{ active: $route.path === '/' }">
             <router-link to="/">
                <strong>00</strong>
-               <p>HOME</p>
+               HOME
             </router-link>
          </li>
-         <li><router-link to="/about">
+         <li :class="{ active: $route.path === '/destination' }">
+            <router-link to="/destination">
                <strong>01</strong>
-               <p>DESTINATION</p>
+               DESTINATION
             </router-link>
          </li>
-         <li><router-link to="/about">
+         <li :class="{ active: $route.path === '/crew' }">
+            <router-link to="/crew">
                <strong>02</strong>
-               <p>CREW</p>
+               CREW
             </router-link>
          </li>
-         <li><router-link to="/about">
+         <li :class="{ active: $route.path === '/technology' }">
+            <router-link to="/technology">
                <strong>03</strong>
-               <p>TECHNOLOGY</p>
+               TECHNOLOGY
             </router-link>
          </li>
       </ul>
@@ -40,40 +41,36 @@ export default {
 .navbar {
    display: flex;
    align-items: center;
-   margin: 40px 0;
-   position: relative;
+   padding: 2.2rem 0;
+   position: relative;  
 
    .logo {
-      margin: 0px 40px;
+      width: 2.7rem;
+      height: 2.7rem;
+      margin: 0px 2.2rem;
    }
 
+   .line {
+      height: 1px;
+      width: 50%;
+      background: #FFFFFF;
+      mix-blend-mode: normal;
+      opacity: 0.25;
+      transform: translateX(50px);
+      z-index: 2;
+   }
 
-   .box_line {
+   .menu {
+      min-width: 50%;
       width: 100%;
-      
-      .line {
-         height: 1px;
-         width: 100%;
-         background: #FFFFFF;
-         mix-blend-mode: normal;
-         opacity: 0.25;
-         position: absolute;
-         top: 52px;
-         left: 220px;
-         z-index: 2;
-      }
-   }
-
-   .nav_list {
       display: flex;
       list-style: none;
       align-items: center;
+      justify-content: center;
       gap: 50px;
       background: rgba(255, 255, 255, 0.04);
       backdrop-filter: blur(40.7742px);
-      padding: 0 120px;
-
-
+      padding: 0 2.7rem;
 
       span {
          font-weight: 700;
@@ -83,9 +80,9 @@ export default {
          display: flex;
          gap: 10px;
          font-style: normal;
-         font-size: 16px;
-         line-height: 19px;
-         letter-spacing: 2.7px;
+         font-size: 0.9rem;
+         line-height: 1rem;
+         letter-spacing: 0.15rem;
          cursor: pointer;
          color: #FFFFFF;
       }
@@ -99,9 +96,15 @@ export default {
       }
 
       li {
-         padding: 43px 0 40px 0;
+         padding: calc(2.2rem + 3px) 0 2.2rem 0;
          border-bottom: 3px solid transparent;
          transition: all .3s;
+         font-family: 'Barlow Condensed';
+         font-style: normal;
+         font-weight: 400;
+         font-size: 0.9rem;
+         line-height: 1rem;
+         letter-spacing: 2.7px;
       }
 
       li:hover {

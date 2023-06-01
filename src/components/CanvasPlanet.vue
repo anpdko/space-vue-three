@@ -38,10 +38,10 @@ export default {
       });
 
       const responseWidth = (width) => {
-         if (width <= 1200) {
+         if (width <= 1080) {
             return width / 2
          }
-         return 600
+         return 540
       }
 
       const setCanvas = () => {
@@ -102,7 +102,7 @@ export default {
       });
 
       const animate = () => {
-         mesh.rotation.y += 0.005;
+         mesh.rotation.y += 0.004;
          controls.update();
          renderer.render(scene, camera);
          requestAnimationFrame(animate);
@@ -121,7 +121,5 @@ export default {
 <style scoped>
 .webGl {
    background-color: transparent;
-   border: 2px solid green;
-   /* color: #c4c4c4; */
 }
 </style>

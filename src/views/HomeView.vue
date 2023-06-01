@@ -1,5 +1,5 @@
 <template>
-  <div class="home page">
+  <div class="home page flex">
     <div class="back">
       <img class="sky" src="@/assets/home/home-desktop.png" alt="">
       <img class="planet" src="@/assets/home/background.png" alt="">
@@ -8,7 +8,7 @@
       <div class="left">
         <h5>SO, YOU WANT TO TRAVEL TO</h5>
         <h1>SPACE</h1>
-        <p class="light-color">Let’s face it; if you want to go to space, you might as well genuinely go to outer space
+        <p>Let’s face it; if you want to go to space, you might as well genuinely go to outer space
           and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this
           world experience!</p>
       </div>
@@ -27,7 +27,6 @@ export default {
 
 <style scoped lang="scss">
 .home {
-  display: flex;
   align-items: center;
 
   .header {
@@ -36,17 +35,19 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding-block:  10rem 5rem;
+    padding-block: 10rem 5rem;
+
     .left {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       justify-content: center;
       gap: 1.5rem;
-      p{
+
+      p {
         max-width: 25rem;
       }
-      
+
     }
 
     .right {
@@ -65,7 +66,37 @@ export default {
         border: none;
         outline: none;
         cursor: pointer;
+        position: relative;
       }
+
+      .btn-explore::after {
+        content: '';
+        border-radius: 50%;
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        z-index: -1;
+        height: 100%;
+        background: #FFFFFF;
+        opacity: 0.1;
+      }
+
+      .btn-explore:hover::after {
+        animation: zoom-animation 0.3s ease forwards;
+      }
+
+      @keyframes zoom-animation {
+        0% {
+          transform: scale(1);
+          opacity: 0;
+        }
+
+        100% {
+          transform: scale(1.5);
+          opacity: 0.1;
+        }
+      }
+
     }
   }
 }

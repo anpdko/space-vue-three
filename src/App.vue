@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <NavbarComponent />
-    <router-view />    
+    <router-view />
   </div>
 </template>
 
@@ -36,11 +36,11 @@ body {
   padding: 0;
 }
 
-.page{
-  min-height: calc(100% - 9.8rem - 6px );
+.page {
+  min-height: calc(100% - 9.8rem - 6px);
 }
 
-.main{
+.main {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -48,20 +48,14 @@ body {
   overflow: auto;
 }
 
-.container{
-  max-width: 1280px;
+.container {
+  max-width: 1400px;
   margin: 0 auto;
+  padding: 0 40px;
 }
 
 a {
   text-decoration: none;
-}
-
-.light-color{
-  color: #D0D6F9;
-}
-.dark-color{
-  color: #0B0D17;
 }
 
 p {
@@ -70,6 +64,7 @@ p {
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.7rem;
+  color: #D0D6F9;
 }
 
 h1 {
@@ -118,6 +113,35 @@ h5 {
   color: #D0D6F9;
 }
 
+.typography {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5556rem;
+  line-height: 1.8889rem;
+  letter-spacing: 0.2625rem;
+  text-transform: uppercase;
+  padding-block: 2.7rem;
+
+  span {
+    font-family: 'Barlow Condensed';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.5556rem;
+    line-height: 1.8889rem;
+    letter-spacing: 0.2625rem;
+    color: #FFFFFF;
+    mix-blend-mode: normal;
+    opacity: 0.25;
+    margin-right: 20px;
+  }
+}
+
+.flex{
+  display: flex;
+  gap: 100px;
+}
+
 .subheading1 {
   font-family: 'Bellefair';
   font-style: normal;
@@ -138,17 +162,17 @@ h5 {
 }
 
 .back {
-    position: fixed;
-    inset: 0;
-    z-index: -2;
+  position: fixed;
+  inset: 0;
+  z-index: -2;
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      position: absolute;
-      inset: 0;
-    }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    inset: 0;
   }
+}
 </style>
